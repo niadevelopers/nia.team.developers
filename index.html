@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        
+
+        body {
+            padding-top: 56px;
+        
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        
+        .jumbotron {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 100px 0;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            transition:0.3s;
+        }
+        .card-hover{
+            transform:scale(1.05);
+        }
+         .card-body{
+            background-color:#ffffff;
+            color:#495057;
+         }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        
+        
+       #job-maina{
+    position: relative;
+    text-decoration: none;
+    font-size: 24px;
+    color:aqua;
+    overflow: hidden;
+}
+
+#job-maina::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; 
+    background: linear-gradient(to right, transparent,aqua, transparent);
+    animation: lineAnimation 4s linear infinite;
+}
+
+@keyframes lineAnimation {
+    0% {
+        left: -100%;
+        transform: translateX(0);
+    }
+    25% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    50% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    75% {
+        left: -100%;
+        transform: translateX(0);
+    }
+    100% {
+        left: -100%;
+        transform: translateX(0);
+    }
+}
+
+      #this-nav{
+        opacity:0.8;
+      }      
+    </style>
+    <title>My Portfolio</title>
+</head>
+<body>
+
+ 
+
+ 
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="this-nav">
+    <a class="navbar-brand" href="https://wa.me/+254714063137" id="job-maina">@Job Maina.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+
+        .jumbotron {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('OIP.jpg') center/cover no-repeat;
+            color: #ffffff;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .jumbotron h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .jumbotron p {
+            font-size: 1.5rem;
+        }
+
+        .particles-js-canvas-el {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        #header{
+            text-decoration:none;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <title>My Portfolio</title>
+</head>
+<body>
+
+    
+    <header class="jumbotron text-center">
+   
+          <header class="display-4" id="header">My Portfolio Website</header>
+
+        <p class="lead">Web Developer | Designer | Enthusiast</p>
+    </header>
+
+   
+    <div id="particles-js"></div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 }, image: { src: 'img/github.svg', width: 100, height: 100 } },
+                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+    </script>
+
+
+  
+<section   class="container" id="about" style="background:url(green-alien.jpg) center/cover;">
+    <h2 class="text-center mb-4">About</h2>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 50px;
+        }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+       
+        .card-body {
+            background-color: #ffffff;
+            color: #495057;
+        }
+
+        h5 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .read-more,
+        .read-less {
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .read-more:hover,
+        .read-less:hover {
+            text-decoration: underline;
+        }
+
+        .full-content {
+            display: none;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+               
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Developer Extraordinaire</h5>
+                        <p class="card-text" id="content">
+                            Hello! I'm a passionate web developer
+                            <span class="truncated-content">
+                                with a proven track record in creating
+                                stunning and efficient websites. My expertise lies in turning ideas into
+                                interactive and user-friendly web applications.
+                            </span>
+                            <span class="full-content" style="display: none;">
+                                with a proven track record in creating
+                                stunning and efficient websites. My expertise lies in turning ideas into
+                                interactive and user-friendly web applications.
+                                <br><br>
+                                I am confident in my ability to tackle any website query, providing
+                                innovative solutions and ensuring a seamless user experience. Choose me for
+                                your next project, and let's make it extraordinary together!
+                            </span>
+                            <span id="readMore" class="read-more" onclick="toggleContent()"> Read more</span>
+                            <span id="readLess" class="read-less" style="display: none;" onclick="toggleContent()"> Read less</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    var isFullContentVisible = false;
+
+    function toggleContent() {
+        var fullContent = document.querySelector('.full-content');
+        var truncatedContent = document.querySelector('.truncated-content');
+        var readMoreLink = document.getElementById('readMore');
+        var readLessLink = document.getElementById('readLess');
+
+        if (!isFullContentVisible) {
+            
+            truncatedContent.style.display = 'none';
+            fullContent.style.display = 'inline';
+            readMoreLink.style.display = 'none';
+            readLessLink.style.display = 'inline';
+            isFullContentVisible = true;
+        } else {
+           
+            truncatedContent.style.display = 'none';
+            fullContent.style.display = 'none';
+            readMoreLink.style.display = 'inline';
+            readLessLink.style.display = 'none';
+            isFullContentVisible = false;
+        }
+    }
+</script>
+
+
+ 
+    <section id="portfolio" class="container">
+        <h2 class="text-center mb-4">Portfolio</h2>
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <img src="OIP.jpg" class="card-img-top" alt="Project Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Device Specs In JavaScript.</h5>
+                        <p class="card-text">This project allows you to view your camera,device specs and geo location in real time.<span style="text-decoration:underline; font-style:italic;color:green;font-weight:bolder;">Allow</span> permissions to best view my project.</p>
+                        <p class="card-text"><span style="color:red;font-weight: bolder;">VPN</span> might give false geo information.</p>
+                        <a href="js-project.html" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+   
+    <section id="contact" class="container">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+            </div>
+        
+            <a href="mailto:jobisaacmaina22@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20there," id="btn" class="btn btn-primary" >Send email</a>
+            <a href="https://wa.me/+254714063137" class="btn btn-primary" >Chat on WhatsApp</a>
+            
+
+
+        </form>
+    </section>
+
+   
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+
+    <style>
+    
+
+        .footer {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            padding: 50px 0;
+            position: relative;
+            opacity:0.9;
+        }
+
+        .footer p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer .social-icons {
+            margin-top: 20px;
+        }
+
+        .footer .social-icons a {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .particles-js-canvas-el {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+    </style>
+    <title>Your Portfolio</title>
+
+   
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Roboto', sans-serif; 
+                overflow-x: hidden;
+            }
+    
+            .footer {
+                background:url(OIP.jpg) center/cover;
+                color: #ffffff;
+                padding: 80px 0;
+                position: relative;
+                border-top: 2px solid #ffffff;
+                border-bottom: 2px solid #ffffff;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            }
+    
+            .footer p {
+                font-size: 1.5rem;
+                margin-bottom: 40px;
+                opacity: 0.8;
+                border-bottom: 1px solid #ffffff;
+                padding-bottom: 20px;
+            }
+    
+            .footer .social-icons {
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .footer .social-icons a {
+                font-size: 3rem;
+                color: #ffffff;
+                margin: 0 30px;
+                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+                opacity: 0.8;
+                border: 2px solid #ffffff;
+                border-radius: 50%;
+                padding: 15px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            }
+    
+            .footer .social-icons a:hover {
+                color: #ffcc00;
+                transform: scale(1.2);
+            }
+    
+            .particles-js-canvas-el {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+        </style>
+        <title>My Portfolio</title>
+    </head>
+    <body>
+    
+       
+        <footer class="footer text-center">
+            <div id="particles-js"></div>
+            <p>&copy; 2024 Job Maina. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://x.com/jobisaacmaina22?t=vk3ICCOGi45ieauyzu7D50&s=08" ><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/job-maina-039734250/" ><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/jobmaina/" ><i class="fab fa-github"></i></a>
+                
+            </div>
+        </footer>
+    
+       
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+           
+        </script>
+    
+    
+   
+    <script src="script1.js"></script>
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+     
+</body>
+</html>

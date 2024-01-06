@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url(green-alien.jpg) center/cover;
+        }
+        video, #specs, #location, #snapshot {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+        }
+        video {
+            top: 0;
+            left: 0;
+        }
+        #specs {
+            top: 0;
+            right: 0;
+            width: 25%;
+            height: 25%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        #location {
+            top: 25%;
+            right: 0;
+            width: 25%;
+            height: 25%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+        #snapshot {
+            bottom: 0;
+            left: 0;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            position: absolute;
+            left: 55%;
+            bottom: 5%;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Real-Time Camera, Specs, and Location with Snapshot</title>
+</head>
+<body>
+    <video id="camera" autoplay playsinline></video>
+    <div id="specs"></div>
+    <div id="location"></div>
+    <canvas id="snapshot" width="640" height="480"></canvas>
+
+    <button onclick="MyFunction()">View Project Benefits</button>
+
+    <script>
+        function MyFunction() {
+            alert("Emergency services can utilize the geolocation information to quickly identify the location of a person in distress, enhancing the efficiency of rescue operations. Security systems can use real-time camera recording for monitoring and surveillance purposes. In disaster-stricken areas, this technology can aid humanitarian efforts by providing real-time information about the affected region and guiding rescue teams to specific locations.");
+        }
+    </script>
+
+    <script>
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                
+                const videoElement = document.getElementById('camera');
+                videoElement.srcObject = stream;
+
+                
+                const specsElement = document.getElementById('specs');
+                const specs = `
+                    <h2>Device Specifications</h2>
+                    <p>Platform: ${navigator.platform}</p>
+                    <p>Browser: ${navigator.userAgent}</p>
+                    <p>Resolution: ${screen.width}x${screen.height}</p>
+                `;
+                specsElement.innerHTML = specs;
+
+                const locationElement = document.getElementById('location');
+                function showPosition(position) {
+                    const locationInfo = `
+                        <h2>Geolocation Details</h2>
+                        <p>Latitude: ${position.coords.latitude}</p>
+                        <p>Longitude: ${position.coords.longitude}</p>
+                    `;
+                    locationElement.innerHTML = locationInfo;
+                }
+
+                function errorHandler(error) {
+                    locationElement.innerHTML = `<p>Error getting location: ${error.message}</p>`;
+                }
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
+                } else {
+                    locationElement.innerHTML = "<p>Geolocation is not supported by this browser.</p>";
+                }
+
+              
+                const snapshotCanvas = document.getElementById('snapshot');
+                const snapshotContext = snapshotCanvas.getContext('2d');
+
+                function takeSnapshot() {
+                    snapshotContext.drawImage(videoElement, 0, 0, snapshotCanvas.width, snapshotCanvas.height);
+                }
+
+                setTimeout(() => {
+                    takeSnapshot();
+                    videoElement.removeEventListener('loadedmetadata', takeSnapshot);
+                }, 5000); 
+            })
+            .catch(function (error) {
+                console.error('Error accessing camera:', error);
+            });
+    </script>
+</body>
+</html>

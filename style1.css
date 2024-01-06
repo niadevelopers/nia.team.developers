@@ -1,0 +1,29 @@
+  #contact {
+    background-image: url('3D_Animation_Style_Create_a_serious_African_male_cartoon_chara_0.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* This ensures the background image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+
+    /* Optional: Add some padding and make the text color contrast well with the background */
+    padding: 20px;
+    color: #fff; /* Adjust the text color based on your image */
+
+    /* Add additional styling as needed */
+}
+#contact input,#message {
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the last value (0.5) to control transparency */
+
+  /* Add additional styling as needed */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#about{
+  background:linear-gradient(to right,#3498db,#8e44ad);
+  color:#fff;
+  padding:50px;
+}
+
