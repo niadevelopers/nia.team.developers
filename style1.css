@@ -1,19 +1,18 @@
   #contact {
-    background-image: url('3D.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-    background-size: cover; /* This ensures the background image covers the entire section */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-
-    /* Optional: Add some padding and make the text color contrast well with the background */
+    background-image: url('3D.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+   
     padding: 20px;
-    color: #fff; /* Adjust the text color based on your image */
+    color: #fff; 
 
-    /* Add additional styling as needed */
+   
 }
 #contact input,#message {
-  background-color: rgba(255, 255, 255, 0.5); /* Adjust the last value (0.5) to control transparency */
+  background-color: rgba(255, 255, 255, 0.5); 
 
-  /* Add additional styling as needed */
+ 
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
