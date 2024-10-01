@@ -3,503 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style1.css">
+    <title>NIA DEVELOPERS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+   
     <style>
-        
+       
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
 
         body {
-            padding-top: 56px;
-        
+            margin: 0;
+            font-family:system-ui,' -apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
         }
 
-        .navbar {
-            background-color: #343a40;
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: #ffffff;
-        }
-
-        
-        .jumbotron {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 100px 0;
-        }
-
-        .card {
-            margin-bottom: 20px;
-            transition:0.3s;
-        }
-        .card-hover{
-            transform:scale(1.05);
-        }
-         .card-body{
-            background-color:#ffffff;
-            color:#495057;
-         }
-        .footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 20px 0;
-        }
-        
-        
-       #job-maina{
-    position: relative;
-    text-decoration: none;
-    font-size: 24px;
-    color:aqua;
-    overflow: hidden;
-}
-
-#job-maina::before {
-    content: '';
-    position: absolute;
+        header {
     width: 100%;
-    height: 2px; 
-    background: linear-gradient(to right, transparent,aqua, transparent);
-    animation: lineAnimation 4s linear infinite;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100; 
+    background-color: white; 
+    transition: background-color 0.3s ease;
 }
 
-@keyframes lineAnimation {
-    0% {
-        left: -100%;
-        transform: translateX(0);
-    }
-    25% {
-        left: 100%;
-        transform: translateX(-100%);
-    }
-    50% {
-        left: 100%;
-        transform: translateX(-100%);
-    }
-    75% {
-        left: -100%;
-        transform: translateX(0);
-    }
-    100% {
-        left: -100%;
-        transform: translateX(0);
-    }
+        header h1 {
+            font-size: 36px;
+            letter-spacing: 5px;
+            color: #333;
+            margin: 0;
+            padding-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        header .robot-line {
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, #00ffff, #ff00ff);
+            margin-bottom: 20px;
+        }
+
+        nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0;
+    position: relative; 
+    z-index: 200;
+    transition: background-color 0.3s ease;
 }
 
-      #this-nav{
-        opacity:0.8;
-      }      
-    </style>
-    <title>My Portfolio</title>
-</head>
-<body>
-
- 
-
- 
- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="this-nav">
-    <a class="navbar-brand" href="https://wa.me/+254714063137" id="job-maina">@Job Maina.</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#about">About Me</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        
-
-        .jumbotron {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('OIP.jpg') center/cover no-repeat;
-            color: #ffffff;
-            padding: 150px 0;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+        nav .menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .jumbotron h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
+        nav .menu li {
+            margin: 0 15px;
         }
 
-        .jumbotron p {
-            font-size: 1.5rem;
+        nav .menu li a {
+            color: #333;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
         }
 
-        .particles-js-canvas-el {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-        #header{
-            text-decoration:none;
-            font-family:Georgia, 'Times New Roman', Times, serif;
-        }
-    </style>
-    <title>My Portfolio</title>
-</head>
-<body>
-
-    
-    <header class="jumbotron text-center">
-   
-          <header class="display-4" id="header">My Portfolio Website</header>
-
-        <p class="lead">Web Developer | Designer | Enthusiast</p>
-    </header>
-
-   
-    <div id="particles-js"></div>
-
-   
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#ffffff' },
-                shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 }, image: { src: 'img/github.svg', width: 100, height: 100 } },
-                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
-                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
-                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
-            },
-            retina_detect: true
-        });
-    </script>
-
-
-  
-<section   class="container" id="about" style="background:url(green-alien.jpg) center/cover;">
-    <h2 class="text-center mb-4">About</h2>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            padding: 50px;
+        nav .menu li a:hover {
+            color: #00ffff;
+            transform: scale(1.1) rotate(5deg); 
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
         }
 
-        .card {
-            transition: transform 0.3s;
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+            transition: transform 0.3s ease;
         }
 
-        .card:hover {
+        .menu-toggle.open {
+            transform: rotate(90deg);
+        }
+
+        .theme-toggle {
+            color: #333;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #ddd;
+            transition: background-color 0.3s ease, color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: #00ffff;
+        }
+
+        @media (min-width: 769px) {
+            .menu {
+                visibility: visible !important;
+                height: auto !important;
+            }
+
+            .menu-toggle {
+                display: none; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                visibility: hidden;
+                height: 0;
+                flex-direction: column;
+                align-items: center;
+                transition: visibility 0.4s, height 0.4s;
+            }
+
+            .menu.show {
+                visibility: visible;
+                height: auto;
+            }
+
+            .menu li {
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: opacity 0.3s, transform 0.3s;
+            }
+
+            .menu li.showItem {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .menu-toggle {
+                display: block; 
+            }
+        }
+
+      
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode header,
+        .dark-mode nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+        }
+
+        .dark-mode header h1 {
+            color: #00ffff;
+            z-index: 100;
+        }
+
+        .dark-mode nav .menu li a {
+            color: #fff;
+            transition: color 0.3s, transform 0.3s;
+            z-index: 200;
+        }
+
+        .dark-mode nav .menu li a:hover {
+            color: #00ffff;
+            transform: scale(1.1) rotate(5deg); 
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); 
+        }
+
+        .dark-mode .theme-toggle {
+            background-color: #444;
+            border-color: #fff;
+        }
+
+        .dark-mode .theme-toggle:hover {
+            background-color: #00ffff;
+            color: black;
+        }
+
+        .image-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .image-link {
+            margin: 10px;
+            width: 150px;
+            height: auto;
+        }
+
+        .image-link img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-link img:hover {
             transform: scale(1.05);
         }
 
-       
-        .card-body {
-            background-color: #ffffff;
-            color: #495057;
-        }
-
-        h5 {
-            color: #007bff;
-        }
-
-        p {
-            font-size: 16px;
-        }
-
-        .read-more,
-        .read-less {
-            color: #007bff;
-            cursor: pointer;
-        }
-
-        .read-more:hover,
-        .read-less:hover {
-            text-decoration: underline;
-        }
-
-        .full-content {
-            display: none;
-        }
-    </style>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto">
-               
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Web Developer Extraordinaire</h5>
-                        <p class="card-text" id="content">
-                            Hello! I'm a passionate web developer
-                            <span class="truncated-content">
-                                with a proven track record in creating
-                                stunning and efficient websites. My expertise lies in turning ideas into
-                                interactive and user-friendly web applications.
-                            </span>
-                            <span class="full-content" style="display: none;">
-                                with a proven track record in creating
-                                stunning and efficient websites. My expertise lies in turning ideas into
-                                interactive and user-friendly web applications.
-                                <br><br>
-                                I am confident in my ability to tackle any website query, providing
-                                innovative solutions and ensuring a seamless user experience. Choose me for
-                                your next project, and let's make it extraordinary together!
-                            </span>
-                            <span id="readMore" class="read-more" onclick="toggleContent()"> Read more</span>
-                            <span id="readLess" class="read-less" style="display: none;" onclick="toggleContent()"> Read less</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-<script>
-    var isFullContentVisible = false;
-
-    function toggleContent() {
-        var fullContent = document.querySelector('.full-content');
-        var truncatedContent = document.querySelector('.truncated-content');
-        var readMoreLink = document.getElementById('readMore');
-        var readLessLink = document.getElementById('readLess');
-
-        if (!isFullContentVisible) {
-            
-            truncatedContent.style.display = 'none';
-            fullContent.style.display = 'inline';
-            readMoreLink.style.display = 'none';
-            readLessLink.style.display = 'inline';
-            isFullContentVisible = true;
-        } else {
-           
-            truncatedContent.style.display = 'none';
-            fullContent.style.display = 'none';
-            readMoreLink.style.display = 'inline';
-            readLessLink.style.display = 'none';
-            isFullContentVisible = false;
-        }
-    }
-</script>
-
-
- 
-    <section id="portfolio" class="container">
-        <h2 class="text-center mb-4">Portfolio</h2>
-        <div class="row">
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="OIP.jpg" class="card-img-top" alt="Project Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Device Specs In JavaScript.</h5>
-                        <p class="card-text">This project allows you to view your camera,device specs and geo location in real time.<span style="text-decoration:underline; font-style:italic;color:green;font-weight:bolder;">Allow</span> permissions to best view my project.</p>
-                        <p class="card-text"><span style="color:red;font-weight: bolder;">VPN</span> might give false geo information.</p>
-                        <a href="js-project.html" class="btn btn-primary">View Project</a>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
-    </section>
-
-   
-    <section id="contact" class="container">
-        <h2 class="text-center mb-4">Contact Me</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
-            </div>
-        
-            <a href="mailto:jobisaacmaina22@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20there," id="btn" class="btn btn-primary" >Send email</a>
-            <a href="https://wa.me/+254714063137" class="btn btn-primary" >Chat on WhatsApp</a>
-            
-
-
-        </form>
-    </section>
-
-   
-
-
-
-
-
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-
-    <style>
-    
-
-        .footer {
-            background-color: #1d1d1d;
-            color: #ffffff;
-            padding: 50px 0;
-            position: relative;
-            opacity:0.9;
-        }
-
-        .footer p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .footer .social-icons {
-            margin-top: 20px;
-        }
-
-        .footer .social-icons a {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin: 0 10px;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .footer .social-icons a:hover {
-            color: #007bff;
-        }
-
-        .particles-js-canvas-el {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-    </style>
-    <title>Your Portfolio</title>
-
-   
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: 'Roboto', sans-serif; 
-                overflow-x: hidden;
+        @media (max-width: 768px) {
+            .image-link {
+                width: 120px;
             }
-    
-            .footer {
-                background:url(OIP.jpg) center/cover;
-                color: #ffffff;
-                padding: 80px 0;
-                position: relative;
-                border-top: 2px solid #ffffff;
-                border-bottom: 2px solid #ffffff;
-                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-            }
-    
-            .footer p {
-                font-size: 1.5rem;
-                margin-bottom: 40px;
-                opacity: 0.8;
-                border-bottom: 1px solid #ffffff;
-                padding-bottom: 20px;
-            }
-    
-            .footer .social-icons {
-                margin-top: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            .footer .social-icons a {
-                font-size: 3rem;
-                color: #ffffff;
-                margin: 0 30px;
-                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-                opacity: 0.8;
-                border: 2px solid #ffffff;
-                border-radius: 50%;
-                padding: 15px;
-                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-            }
-    
-            .footer .social-icons a:hover {
-                color: #ffcc00;
-                transform: scale(1.2);
-            }
-    
-            .particles-js-canvas-el {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: 0;
-            }
-        </style>
-        <title>My Portfolio</title>
-    </head>
-    <body>
-    
-       
-        <footer class="footer text-center">
-            <div id="particles-js"></div>
-            <p>&copy; 2024 Job Maina. All Rights Reserved.</p>
-            <div class="social-icons">
-                <a href="https://x.com/jobisaacmaina22/"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/job-maina-039734250/" ><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/jobmaina/" ><i class="fab fa-github"></i></a>
-                
-            </div>
-        </footer>
-    
-       
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script>
-           
-        </script>
-    
-    
-   
-    <script src="script1.js"></script>
-  
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        }
 
      
+footer {
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+footer p {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #bbb; 
+}
+
+footer .social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+footer .social-icons a:hover {
+    color: #00ffff; 
+    transform: scale(1.2); 
+}
+
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+    
+    footer p {
+        font-size: 12px;
+    }
+    
+    footer .social-icons {
+        gap: 10px; 
+    }
+}
+
+
+#gameOverlayj, #successOverlayj, #failureOverlayj {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            flex-direction: column;
+        }
+        #successOverlayj, #failureOverlayj {
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 200;
+            font-size: 24px;
+            text-align: center;
+        }
+        #successOverlayj img, #failureOverlayj img {
+            width: 200px;
+            height: auto;
+            margin: 20px;
+        }
+        canvas {
+            border: 2px solid #ffffff;
+            margin: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        #backgroundImagej {
+            cursor: pointer;
+            width: 100%;
+            max-width: 600px;
+        }
+        .gameConsolej {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+            padding: 0 10px;
+        }
+        .gameConsolej p, .gameConsolej h2 {
+            margin: 0;
+        }
+        .gameButtonsj {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #21a1f1;
+        }
+        #endButtonj {
+            background-color: #f14c4c;
+        }
+        #endButtonj:hover {
+            background-color: #d14040;
+        }
+
+       
+        @media (max-width: 768px) {
+            .gameConsolej {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gameButtonsj {
+                flex-direction: column;
+                align-items: center;
+            }
+            button {
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+</head>
+<body>
+
+  
+    <header>
+        <h1>NIA DEVELOPERS</h1>
+        <div class="robot-line"></div>
+        <nav>
+            <div class="menu-toggle">&#9776;</div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="theme-toggle">DARK MODE</div>
+        </nav>
+    </header>
+
+    
+    <section>
+        <h1>Welcome to the Futuristic <span style="text-decoration: underline rgb(0, 4, 255); color: #21a1f1;">Nia developers</span> Website</h1>
+        <p>Welcome to our website, where innovation meets expertise,explore our
+           tailored IT  and programming solutions designed to empower your business and transform
+           your digital landscape; whether you're seeking cutting-edge development
+           services or expert consulting, your journey to success begins here!
+        </p>
+    </section>
+
+   
+    <h3>Explore our simple game.</h3>
+    <div class="image-links">
+        <a href="#" class="image-link">
+            
+            <img src="OIP (1).jpg" id="backgroundImagej" alt="Start Game">
+
+           
+
+<div id="gameOverlayj">
+    <h2>Catch the Moving Balls!</h2>
+    <div class="gameConsolej">
+        <p>Score: <span id="scorej">0</span></p>
+        <p>Time left: <span id="timej">60</span> seconds</p>
+    </div>
+    <div class="gameButtonsj">
+        <button id="startButtonj">Start Game</button>
+        <button id="endButtonj">End Game</button>
+    </div>
+</div>
+
+
+
+<div id="successOverlayj">
+    <h2>Congratulations! You won!</h2>
+    <img src="actor.gif" alt="Popping Champagne">
+    <p>Your Score: <span id="finalScoreSuccessj"></span></p>
+    <button onclick="closeOverlay('successOverlayj')">CLOSE</button>
+</div>
+
+
+
+<div id="failureOverlayj">
+    <h2>You didn't make it! Target was 25 balls!</h2>
+    <img src="sacarstic-joker.gif" alt="Sad Cartoon">
+    <p>Your Score: <span id="finalScoreFailurej"></span></p>
+    <button onclick="closeOverlay('failureOverlayj', false)">CLOSE</button>
+</div>
+        </a>
+ 
+    </div>
+
+<footer>
+    <p>&copy; 2024 Nia Developers. All rights reserved.</p>
+    <div class="social-icons">
+        <p>Follow:
+            <a href="https://twitter.com/jobisaacmaina22" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/job-isaac-maina-039734250/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com/@rickman.290" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com/@rickman290" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://discord.com/channels/@me/1248421865295319071" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/Jobmaina" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a> </div>
+</footer>
+
+<script src="script1.js"></script>
+
+<script>
+    let balls = [];
+    let score = 0;
+    let timeLeft = 1000;
+    let gameRunning = false;
+    let intervalId;
+    let gameTimerId;
+    const targetScore = 25;  
+    
+    document.getElementById('backgroundImagej').addEventListener('click', () => {
+        document.getElementById('gameOverlayj').style.display = 'flex';
+        setup();
+    });
+    
+    function setup() {
+        createCanvas(600, 400).parent('gameOverlayj');
+        noStroke();
+    
+        document.getElementById('startButtonj').addEventListener('click', startGame);
+        document.getElementById('endButtonj').addEventListener('click', endGameConfirmation);
+    }
+    
+    function draw() {
+        if (gameRunning) {
+            background(68, 68, 68);
+            updateTime();
+            drawBalls();
+            displayScore();
+        }
+    }
+    
+    function startGame() {
+        score = 0;
+        timeLeft = 1000;  
+        balls = [];
+        gameRunning = true;
+        resetButton();
+    
+        clearInterval(intervalId);
+        clearTimeout(gameTimerId);
+    
+        intervalId = setInterval(generateBall, 1000);
+        gameTimerId = setTimeout(endGame, timeLeft * 1000);
+    }
+    
+    function endGame() {
+        gameRunning = false;
+        clearInterval(intervalId);
+        clearTimeout(gameTimerId);
+        document.getElementById('startButtonj').innerText = 'Start Again';
+    
+        if (score >= targetScore) {
+            document.getElementById('finalScoreSuccessj').innerText = score;
+            document.getElementById('successOverlayj').style.display = 'flex';
+        } else {
+            document.getElementById('finalScoreFailurej').innerText = score;
+            document.getElementById('failureOverlayj').style.display = 'flex';
+        }
+    }
+    
+    function endGameConfirmation() {
+        if (gameRunning) {
+            let confirmEnd = confirm(`Are you sure you want to end the game? Your current score is ${score}.`);
+            if (confirmEnd) {
+                endGame();
+            }
+        }
+    }
+    
+    function generateBall() {
+        const ball = {
+            x: random(15, width - 15),
+            y: random(15, height - 15),
+            radius: random(10, 30),
+            color: [random(255), random(255), random(255)],
+            speed: random(1, 3),
+            dirX: random([-1, 1]),
+            dirY: random([-1, 1]),
+        };
+        balls.push(ball);
+    }
+    
+    function drawBalls() {
+        for (const ball of balls) {
+            fill(ball.color);
+            ellipse(ball.x, ball.y, ball.radius * 2);
+            ball.x += ball.speed * ball.dirX;
+            ball.y += ball.speed * ball.dirY;
+    
+           
+            if (ball.x + ball.radius > width || ball.x - ball.radius < 0) {
+                ball.dirX *= -1;
+            }
+            if (ball.y + ball.radius > height || ball.y - ball.radius < 0) {
+                ball.dirY *= -1;
+            }
+        }
+    }
+    
+    function updateTime() {
+        if (gameRunning) {
+            timeLeft--;
+            document.getElementById('timej').innerText = timeLeft;
+    
+            if (timeLeft <= 0) {
+                endGame();
+            }
+        }
+    }
+    
+    function mousePressed() {
+        for (let i = balls.length - 1; i >= 0; i--) {
+            const ball = balls[i];
+            const d = dist(mouseX, mouseY, ball.x, ball.y);
+            if (d < ball.radius) {
+                score++;
+                balls.splice(i, 1);
+                break;
+            }
+        }
+    }
+    
+    function displayScore() {
+        document.getElementById('scorej').innerText = score;
+    }
+    
+    function resetButton() {
+        document.getElementById('startButtonj').innerText = gameRunning ? 'Restart Game' : 'Start Game';
+    }
+    
+    function closeOverlay(overlayId, restartGame = true) {
+        document.getElementById(overlayId).style.display = 'none';
+        if (restartGame) {
+            startGame();
+        } else {
+        
+            document.getElementById('gameOverlayj').style.display = 'none';
+        }
+    }
+    </script>
+    
+
+
 </body>
 </html>
