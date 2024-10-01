@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NIA DEVELOPERS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 40px 15px;
+            background-color: #282828;
+            color: white;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            animation: bounceIn 2s;
+        }
+
+        .header-section p {
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            padding: 20px 15px;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #007bff;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .btn-contact {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-contact:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .social-contact a {
+            margin: 10px;
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        .social-contact a:hover {
+            color: #0056b3;
+        }
+
+               
+footer {
+    width: 100%;
+    background-color: #333; 
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+footer p {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #bbb; 
+}
+
+footer .social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+footer .social-icons a:hover {
+    color: #00ffff; 
+    transform: scale(1.2); 
+}
+
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+    
+    footer p {
+        font-size: 12px;
+    }
+    
+    footer .social-icons {
+        gap: 10px; 
+    }
+}
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .header-section p {
+                font-size: 1rem;
+            }
+
+            .contact-form h2 {
+                font-size: 1.5rem;
+            }
+
+            .form-control {
+                margin-bottom: 10px;
+            }
+
+            .social-contact a {
+                font-size: 1.5rem;
+            }
+
+            .btn-contact {
+                padding: 8px 15px;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Admin@nia developers contact</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section class="header-section">
+        <h1 class="animate__animated animate__bounceIn">Contact Our administrator</h1>
+        <p>Feel free to reach out to us through Email or WhatsApp</p>
+    </section>
+
+    
+    <section class="contact-section container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="contact-form animate__animated animate__fadeIn">
+                    <h2>Get in Touch</h2>
+                    <form action="mailto:jobisaacmaina22@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-contact btn-block">Send Email</button>
+                    </form>
+                    <div class="social-contact text-center mt-4">
+                        <p>Or reach us via:</p>
+                        <a href="https://wa.me/+254714063137" class="fab fa-whatsapp" target="_blank"></a>
+                        <a href="mailto:jobisaacmaina22@gmail.com" class="fas fa-envelope"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      
+<footer>
+    <p>&copy; 2024 Nia Developers. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://twitter.com/jobisaacmaina22" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/job-isaac-maina-039734250/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://youtube.com/@rickman.290" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com/@rickman290" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://discord.com/channels/@me/1248421865295319071" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://github.com/Jobmaina" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
