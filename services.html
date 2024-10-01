@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NIA DEVELOPERS</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #282828;
+            color: white;
+        }
+
+        .header-section h1 {
+            font-size: 3rem;
+            animation: bounceIn 2s;
+        }
+
+        .header-section p {
+            font-size: 1.5rem;
+        }
+
+        .service {
+            text-align: center;
+            margin: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .service:hover {
+            background-color: #f8f9fa;
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+       
+        footer {
+    width: 100%;
+    background-color: #333; 
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+footer p {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+footer .social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+footer .social-icons a:hover {
+    color: #00ffff; 
+    transform: scale(1.2); 
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+    
+    footer p {
+        font-size: 12px;
+    }
+    
+    footer .social-icons {
+        gap: 10px; 
+    }
+}
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Nia Developers Services</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <section class="header-section">
+        <h1 class="animate__animated animate__bounceIn">Our Consultancy Services</h1>
+        <p>Offering the best ICT consulting, web development, hacking, and penetration testing solutions</p>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service animate__animated animate__fadeInUp">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Design & Development</h3>
+                    <p> We dive into creating dynamic and responsive websites with the latest technologies.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service animate__animated animate__fadeInUp">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Coding & Software Solutions</h3>
+                    <p> We offer custom software solutions tailored to client needs.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service animate__animated animate__fadeInUp">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Penetration Testing</h3>
+                    <p> We ensure your systems are secure through expert vulnerability analysis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service animate__animated animate__fadeInUp">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>ICT Consultancy</h3>
+                    <p>We provide expert advice and solutions for all your ICT needs.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service animate__animated animate__fadeInUp">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Social Media Hacking</h3>
+                    <p>We ethically hack and secure social media platforms.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service animate__animated animate__fadeInUp">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>We provide comprehensive cybersecurity solutions to protect your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     
+<footer>
+    <p>&copy; 2024 Nia Developers. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://twitter.com/jobisaacmaina22" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/job-isaac-maina-039734250/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://youtube.com/@rickman.290" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com/@rickman290" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://discord.com/channels/@me/1248421865295319071" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://github.com/Jobmaina" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
